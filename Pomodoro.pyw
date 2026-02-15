@@ -59,7 +59,7 @@ class Defaults:
     AUTO_START = True
     
     # Other
-    LANGUAGE = "RU"
+    LANGUAGE = "EN"
     NOTIFICATION_SIZE = (1024, 768)
     CONTROLS_HEIGHT = 40
     CONTROLS_WIDTH = 450
