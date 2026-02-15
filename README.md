@@ -17,7 +17,7 @@ Rest screen: always-on-top fullscreen window that allow you to skip timer with e
 
 ## Installation / usage
 
-1.  Make sure you have Python 3.7+ installed
+1.  Make sure you have Python 3.7+ installed ([Download Python](https://www.python.org/downloads/))
 2.  Open Pomodoro.pyw
     
 ### License
