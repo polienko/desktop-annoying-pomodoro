@@ -15,12 +15,20 @@ Rest screen: always-on-top fullscreen window that allow you to skip timer with e
 
 ![Screenshot 2](Screenshot2.png)
 
-## Installation / usage
+## Usage (windows)
+- Download .exe from releases
+  
+    **or**
 
-1.  Make sure you have Python 3.7+ installed ([Download Python](https://www.python.org/downloads/))
-2.  Open Pomodoro.pyw
+- Make sure you have Python 3.7+ installed ([Download Python](https://www.python.org/downloads/))
+- Open Pomodoro.pyw
+
+## Usage (linux) - work in progress
+- Install tkinter (sudo apt-get install python3-tk)
+- Open Pomodoro.pyw (python3 Pomodoro.pyw)
     
-### License
+## License
 
 This project is licensed under the GNU General Public License v3.0.  
+
 See the [LICENSE](LICENSE) file for the full text.
