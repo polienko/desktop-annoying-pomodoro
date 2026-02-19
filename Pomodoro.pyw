@@ -22,7 +22,7 @@ from enum import Enum
 
 class DebugMode:
     """Debug mode settings"""
-    ENABLED = True
+    ENABLED = False
     
     # Time in seconds (for debug)
     WORK_TIME = 10
