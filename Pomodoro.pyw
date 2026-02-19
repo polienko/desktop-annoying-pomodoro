@@ -56,7 +56,7 @@ class Defaults:
     
     # Flags
     BAR_BORDERS = True
-    AUTO_START = True
+    AUTO_START = False
     
     # Other
     LANGUAGE = "EN"
