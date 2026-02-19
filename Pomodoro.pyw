@@ -22,7 +22,7 @@ from enum import Enum
 
 class DebugMode:
     """Debug mode settings"""
-    ENABLED = False
+    ENABLED = True
     
     # Time in seconds (for debug)
     WORK_TIME = 10
@@ -1723,6 +1723,12 @@ class PomodoroController:
 
         if self.model.settings.auto_start:
             self.start_resume_timer()
+        else:
+            # If autostart setting disabled, showing control panel on start
+            self.update_controls_position()
+            self.views['controls'].window.deiconify()
+            self.views['controls'].window.lift()
+            self.views['controls'].window.attributes('-topmost', True)
 
     def disable_alt_f4_globally(self):
         """Disable Alt+F4 completely in the entire application"""
@@ -1821,6 +1827,10 @@ class PomodoroController:
     def hide_controls_delayed(self):
         """Hide controls after delay"""
         self.hide_controls_scheduled = None
+
+        # Don't hide control panel if PAUSED / STOPPED
+        if self.model.state.state in [TimerState.PAUSED, TimerState.STOPPED]:
+            return
         
         if 'controls' in self.views and self.views['controls'].window:
             x, y = self.views['controls'].window.winfo_pointerxy()
@@ -1849,6 +1859,10 @@ class PomodoroController:
             self.root.after_cancel(self.show_controls_scheduled)
             self.show_controls_scheduled = None
         
+        # Don't hide control panel if PAUSED / STOPPED
+        if self.model.state.state in [TimerState.PAUSED, TimerState.STOPPED]:
+            return
+
         # Hide control panel after 200 ms on mouse left
         if 'controls' in self.views and self.views['controls'].window:
             if not self.hide_controls_scheduled:
