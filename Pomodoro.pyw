@@ -62,7 +62,7 @@ class Defaults:
     LANGUAGE = "EN"
     NOTIFICATION_SIZE = (1024, 768)
     CONTROLS_HEIGHT = 40
-    CONTROLS_WIDTH = 450
+    CONTROLS_WIDTH = 470
 
 class TimerState(Enum):
     """Timer states"""
@@ -610,7 +610,7 @@ class ControlsView(BaseView):
         self.widgets['pomodoro'] = tk.Label(
             pomo_frame,
             text=f"{self.model.state.current_pomodoro}/{self.model.settings.pomodoros_for_long_break}",
-            font=('Segoe UI', 16, 'bold'), # POMODORO 1/4
+            font=('Segoe UI', 12, 'bold'), # POMODORO 1/4
             fg='#ff9800',
             bg='#1a1a1a',
             anchor='center',
@@ -782,7 +782,7 @@ class ControlsView(BaseView):
         
         # Update pomodoro counter
         if 'pomodoro' in self.widgets:
-            pomodoro_text = f"{self.model.state.current_pomodoro}/{self.model.settings.pomodoros_for_long_break}"
+            pomodoro_text = f"{self.model.state.current_pomodoro}/{self.model.settings.pomodoros_for_long_break} ({self.model.state.total_pomodoros:02d})"
             self.widgets['pomodoro'].config(text=pomodoro_text)
             
             if self.model.state.current_pomodoro == self.model.settings.pomodoros_for_long_break:
